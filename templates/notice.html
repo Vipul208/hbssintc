@@ -1,0 +1,152 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<!-- Start header -->
+	<header class="top-navbar">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="index">
+					<img src="{{baseUrl}}/logo1.png" alt="" width="70%" />
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-host" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbars-host">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item"><a class="nav-link" href="index">Home</a></li>
+						<li class="nav-item active"><a class="nav-link" href="notice">Notice</a></li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Admission</a>
+							<div class="dropdown-menu" aria-labelledby="dropdown-a">
+								<a class="dropdown-item" href="ad_process">Admission Procedure</a>
+								<a class="dropdown-item" href="admission">Online Admission Form</a>
+							</div>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="testimonials">Testimonial</a></li>
+						<li class="nav-item"><a class="nav-link" href="gallery">Gallery</a></li>
+						<li class="nav-item"><a class="nav-link" href="teachers">Teachers</a></li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">About</a>
+							<div class="dropdown-menu" aria-labelledby="dropdown-a">
+								<a class="dropdown-item" href="about">About School</a>
+								<a class="dropdown-item" href="about#mission-vision">Our Vision & Mission</a>
+							</div>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="contact">Contact</a></li>
+					</ul>
+					{% if user.is_authenticated %}
+					<ul class="nav navbar-nav navbar-right">
+						<li><a class="hover-btn-new log orange" href="logout"><span>Logout</span></a></li>
+					</ul>
+					{% else %}
+
+					<ul class="nav navbar-nav navbar-right">
+						<li><a class="hover-btn-new log orange" href="admin" ><span>Admin</span></a></li>
+					</ul>
+					{% endif %}
+				</div>
+			</div>
+		</nav>
+	</header>
+	<!-- End header -->
+	<!-- End header -->
+    <section id="menubar" style="background-color: #1f2437; padding: 2em; height: 20em; background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 30%),url('{{baseUrl}}/notice.jpg'); background-position: center">
+        <section id="breadcrumb">
+            <div class="container" style="max-width: 720px;">
+                <h2>
+                    Notice Board
+                </h2>
+                <ul class="breadcrumbs" id="abc">
+                    <li><a href="index">Home</a></li>
+                    <li><a disable href="#">Notice Board</a></li>
+                </ul>
+            </div>
+        </section>
+    </section>
+
+    <section id="news">
+        <div class="container">
+            <div class="container text-center mb-5">
+                <p class="section-description">Stay updated with all that&#39;s happening in the school.</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="ideaboxTimeline" id="i-timeline">
+                <div class="it-spine"></div>
+                {% for temp in notes %}
+                {% if forloop.counter|divisibleby:"2" %} 
+                    <div class="it-box it-right">
+                {% else %}
+                    <div class="it-box it-left">
+                {% endif %}
+                    <div class="it-content">
+                        <h3>{{temp.heading}}</h3>
+                        <p>{{temp.description}}</p>
+                        <div class="it-infobar">
+                            <em>{{temp.date}}</em>
+                            <p style="font-size: 3px;">{{temp.id}}</p>
+                        </div>  
+                    </div>
+                    <div class="it-iconbox">
+                        <span></span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </section>
+    <section id="news">
+        <div class="container">
+            <div class="container text-center mb-5">
+                </div>
+            </div>
+        </section>
+        <div id="testimonials" class="parallax section db parallax-off" style="background-image:url('{{baseUrl}}/parallax_04.jpg');">
+            <div class="container">
+                <div class="section-title text-center">
+                    <h3 >Testimonials</h3></a>
+                    <a href="testimonials"><p  style="color:white;">Some testimonials are...<i class="fa fa-hand-pointer-o"></i></p></a>
+                </div><!-- end title -->
+    
+                <div class="row">
+                    <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="testi-carousel owl-carousel owl-theme">
+                            <div class="testimonial clearfix">
+                                <div class="testi-meta">
+                                    <img src="{{baseUrl}}/abhishek.png" alt="" class="img-fluid">
+                                    <h4>Abhishek Kumar </h4>
+                                </div>
+                                <div class="desc">
+                                    <h3><i class="fa fa-quote-left"></i> Wonderful Support!</h3>
+                                    <p class="lead">They have got my project on time with the competition with a sed highly skilled, and experienced & professional team.</p>
+                                </div>
+                                <!-- end testi-meta -->
+                            </div>
+                            <!-- end testimonial -->
+    
+                            <div class="testimonial clearfix">
+                                <div class="testi-meta">
+                                    <img src="{{baseUrl}}/muskan.png" alt="" class="img-fluid">
+                                    <h4>Anshika Sharma </h4>
+                                </div>
+                                <div class="desc">
+                                    <h3><i class="fa fa-quote-left"></i> Awesome Services!</h3>
+                                    <p class="lead">Explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you completed.</p>
+                                </div>
+                                <!-- end testi-meta -->
+                            </div>
+                            <!-- end testimonial -->
+                            <!-- end testimonial -->
+                        </div><!-- end carousel -->
+                    </div><!-- end col -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </div><!-- end section -->
+        </div>
+        
+    
+    	{% endblock  %}

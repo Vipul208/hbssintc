@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<!-- Start header -->
+	<header class="top-navbar">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="index">
+					<img src="{{baseUrl}}/logo1.png" alt="" width="70%" />
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-host" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbars-host">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item"><a class="nav-link" href="index">Home</a></li>
+						<li class="nav-item"><a class="nav-link" href="notice">Notice</a></li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Admission</a>
+							<div class="dropdown-menu" aria-labelledby="dropdown-a">
+								<a class="dropdown-item" href="ad_process">Admission Procedure</a>
+								<a class="dropdown-item" href="admission">Online Admission Form</a>
+							</div>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="testimonials">Testimonial</a></li>
+						<li class="nav-item"><a class="nav-link" href="gallery">Gallery</a></li>
+						<li class="nav-item"><a class="nav-link" href="teachers">Teachers</a></li>
+						<li class="nav-item dropdown active">
+							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">About</a>
+							<div class="dropdown-menu" aria-labelledby="dropdown-a">
+								<a class="dropdown-item" href="about">About School</a>
+								<a class="dropdown-item" href="about#mission-vision">Our Vision & Mission</a>
+							</div>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="contact">Contact</a></li>
+						</ul>
+						{% if user.is_authenticated %}
+						<ul class="nav navbar-nav navbar-right">
+							<li><a class="hover-btn-new log orange" href="logout"><span>Logout</span></a></li>
+						</ul>
+						{% else %}
+	
+						<ul class="nav navbar-nav navbar-right">
+							<li><a class="hover-btn-new log orange" href="admin" ><span>Admin</span></a></li>
+						</ul>
+						{% endif %}
+					</div>
+				</div>
+			</nav>
+		</header>
+	<!-- End header -->
+
+	<div class="all-title-box-ab" >
+		<div class="container text-center">
+			<h1>About Us<span class="m_1">Haribheji Sughar Singh Inter College Jamalipur Jasrana Firozabad.</span></h1>
+            <div class="section-title row text-center">
+                <div class="col-md-8 offset-md-2">
+                    <p class="lead" style="color:white;">Education Institute affiliated with Madhyamik Sikhksha Parishad, Uttar Pradesh Prayagraj</p>
+                </div>
+            </div><!-- end title -->
+		</div>
+
+	</div>
+
+    <div id="overviews" class="section lb">
+        <div class="container">
+
+
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                    <div class="message-box">
+                        <h4>BEST education school</h4>
+                        <h2>Welcome to H.B.S.S INTER COLLEGE</h2>
+                        <p>Established in year 1999, it is located in Rural area of Uttar Pradesh state of India.
+							In village Jamalipur area of tehsil Jasrana block of Firozabad district.<br> Area Pincode - 283136. <br>
+							School is providing Primary level to intermediate (Nursery - 12) education and is being managed by Department of Education. <br>
+                            Medium of instruction is Hindi language. School is affiliated with  Madhyamik Sikhksha Parishad, Uttar Pradesh Prayagraj.<br><br></p>
+                       
+                    </div><!-- end messagebox -->
+                </div><!-- end col -->
+
+				<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                    <div class="post-media wow fadeIn">
+                        <img src="images/about_02.jpg" alt="" class="img-fluid img-rounded">
+                    </div><!-- end media -->
+                </div><!-- end col -->
+			</div>
+        </div><!-- end container -->
+    </div><!-- end section -->
+
+	<div id="mission-vision" class="hmv-box">
+		<div  class="container">
+			<div class="row">
+				<div class="col-lg-4 col-md-6 col-12">
+					<div class="inner-hmv">
+						<div class="icon-box-hmv"><i class="flaticon-achievement"></i></div>
+						<h3>Mission</h3>
+						<div class="tr-pa">M</div>
+						<p>Our mission  is to nurture our students to realize their own potential and identify and achieve their goals in an environment of rich tutelage, joyful and harmonious learning while keeping alive the spirit of togetherness and ‘Service Before Self’. Our aim is to bring forth responsible citizens of the world who make a difference and who will make the school and nation proud of their achievements and stellar personal qualities</p>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-12">
+					<div class="inner-hmv">
+						<div class="icon-box-hmv"><i class="flaticon-eye"></i></div>
+						<h3>Vision</h3>
+						<div class="tr-pa">V</div>
+						<p>Our vision is to prepare our children for life by :-</p>
+						<li>Broadening their horizons so that their world encompasses the whole of mankind.</li>
+						<li>Helping them incorporate the essential values of goodness, honesty, humility and discipline as an integral part of their being.</li>
+						<li>Deepening their thoughts so that their learning becomes the means to achieve that perfection of mind.</li>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-12">
+					<div class="inner-hmv">
+						<div class="icon-box-hmv"><i class="flaticon-history"></i></div>
+						<h3>History</h3>
+						<div class="tr-pa">H</div>
+						<p>Established in 30 June, 1999.<br>Inaugurated by Ashok Yadav.
+							HighSchool,  recognised by Madhyamik Sikhksha Parishad, Uttar Pradesh Prayagraj.<br>
+							Intermediate, recognised by Madhyamik Sikhksha Parishad, Uttar Pradesh Prayagraj.<br>
+							Successfully completed Twenty-Two years.
+
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{% endblock  %}

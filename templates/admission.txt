@@ -1,0 +1,29 @@
+<h3>The Admission details are as follows:</h3>
+<pre>
+Session: <strong>{{session}}</strong>    Class: <strong>{{std}}</strong>      Date: <strong>{{date}}</strong>
+
+<u>Student's Information</u>
+First Name: <strong>{{first_name}}</strong>      Last Name: <strong>{{last_name}}</strong>
+Aadhar No: <strong>{{aadhar}}</strong>       Gender: <strong>{{aadhar}}</strong>
+DOB: <strong>{{dob}}</strong>       Categoty: <strong>{{category}}</strong>
+Caste: <strong>{{caste}}</strong>        Religion: <strong>{{religion}}</strong>      Nationality: <strong>{{nationality}}</strong>
+
+<u>Previous School Information</u>
+Previous School: <Strong>{{pre_school}}</Strong>
+Previous Class: <Strong>{{pre_class}}</Strong>      Passing Year: <Strong>{{pre_year}}</Strong>     Percentage: <Strong>{{percentage}}</Strong>
+
+<u>Permanent Address</u>
+Full Address: <strong>{{add_1}} {{add_2}}</strong>
+City: <strong>{{city}}</strong>     State: <strong>{{state}}</strong>     Pincode: <strong>{{pincode}}</strong>
+
+<u>Parent's Information</u>
+Father's Name: <strong>{{f_name}}</strong>      Father's Occupation: <strong>{{f_occu}}</strong>
+Mother's Name: <strong>{{m_name}}</strong>      Mother's Occupation: <strong>{{m_occu}}</strong>
+Father's Aadhar No: <strong>{{f_aadhar}}</strong>
+Father's Qualification: <strong>{{f_qual}}</strong>       Mother's Qualification: <strong>{{m_qual}}</strong>
+Family Annual Income: <strong>{{income}}</strong>        Parent's Mobile No: <strong>{{phone}}</strong>
+
+Email: {{email}}
+
+This is an automatically generated e-mail. Please do not reply to this email.
+</pre>

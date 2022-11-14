@@ -1,0 +1,258 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<!-- Start header -->
+	<header class="top-navbar">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="index">
+					<img src="{{baseUrl}}/logo1.png" alt="" width="70%" />
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-host" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbars-host">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item"><a class="nav-link" href="index">Home</a></li>
+						<li class="nav-item"><a class="nav-link" href="notice">Notice</a></li>
+						<li class="nav-item dropdown active">
+							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Admission</a>
+							<div class="dropdown-menu" aria-labelledby="dropdown-a">
+								<a class="dropdown-item" href="ad_process">Admission Procedure</a>
+								<a class="dropdown-item" href="admission">Online Admission Form</a>
+							</div>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="testimonials">Testimonial</a></li>
+						<li class="nav-item"><a class="nav-link" href="gallery">Gallery</a></li>
+						<li class="nav-item"><a class="nav-link" href="teachers">Teachers</a></li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">About</a>
+							<div class="dropdown-menu" aria-labelledby="dropdown-a">
+								<a class="dropdown-item" href="about">About School</a>
+								<a class="dropdown-item" href="about#mission-vision">Our Vision & Mission</a>
+							</div>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="contact">Contact</a></li>
+					</ul>
+					{% if user.is_authenticated %}
+					<ul class="nav navbar-nav navbar-right">
+						<li><a class="hover-btn-new log orange" href="logout"><span>Logout</span></a></li>
+					</ul>
+					{% else %}
+
+					<ul class="nav navbar-nav navbar-right">
+						<li><a class="hover-btn-new log orange" href="admin" ><span>Admin</span></a></li>
+					</ul>
+					{% endif %}
+				</div>
+			</div>
+		</nav>
+	</header>
+	<!-- End header -->
+	<!-- End header -->
+	
+	<div class="all-title-box-adm">
+		<div class="container text-center">
+			<h1>Admission<span class="m_1">Haribheji Sughar Singh Inter College Jamalipur Jasrana Firozabad.</span></h1>
+		</div>
+	</div>
+	
+    <div id="contact" class="section wb">
+        <div class="container">
+            <div class="section-title text-center">
+                <h3>Admission? <br>Sure we are Online!</h3>
+                <p class="lead">Please give us more details about yourself. Please fill out the form below. <br>We will be glad to assist you !!</p>
+            </div><!-- end title -->
+            		
+
+            <div class="row">
+                <div class="col-xl-12 col-md-12 col-sm-12">
+                    
+                    <div class="contact_form">
+                        <div class="section-title rounded">
+                        Admission Details
+                    </div>
+                        <div id="message"></div>
+                        <form id="contactform" class="secttion-title rounded" action="admissions"  method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="row row-fluid">
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <input type="text" required name="session" id="session" class="form-control" placeholder="Session">
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <input type="text" required name="std" id="std" class="form-control" placeholder="Class">
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <input type="text" required name="date" id="date" class="form-control" placeholder="Date (dd/mm/yyyy)">
+                                </div>
+                                <div class="section-title rounded col-lg-12 col-md-12 col-sm-12">
+                                    Student's Information
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <input type="text" required name="first_name" id="first_name" class="form-control" placeholder="First Name">
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <input type="text" required name="last_name" id="last_name" class="form-control" placeholder="Last Name">
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <input type="text" required  name="aadhar" id="aadhar" class="form-control" placeholder="Aadhar Number">
+                                </div>
+
+                                <div class="col-lg-4 col-md-4 col-sm-4 ">
+
+                                    <select class="form-control" required id="gender" name="gender" style="height:3.4em;">
+                                        <option value="null">
+                                            Gender
+                                        </option>
+                                        <option value="male">
+                                            Male
+                                        </option>
+                                        <option value="female">
+                                            Female
+                                        </option>
+                                        <option value="other">
+                                            Other
+                                        </option>
+
+                                    </select>
+
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <input type="text" required name="dob" id="dob" class="form-control" placeholder="DOB (dd/mm/yyyy)">
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 ">
+
+                                    <select class="form-control" required id="category" name="category" style="height:3.4em;">
+                                        <option value="null">
+                                            Category
+                                        </option>
+                                        <option value="male">
+                                            General
+                                        </option>
+                                        <option value="OBC">
+                                            OBC
+                                        </option>
+                                        <option value="ST">
+                                            ST
+                                        </option>
+                                        <option value="SC">
+                                            SC
+                                        </option>
+
+                                    </select>
+
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <input type="text" required name="caste" id="caste" class="form-control" placeholder="Caste">
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <input type="text" required name="religion" id="religion" class="form-control" placeholder="Religion">
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <input type="text" required name="nationality" id="nationality" class="form-control" placeholder="Nationality">
+                                </div>
+
+                                <div class="section-title rounded col-lg-12 col-md-12 col-sm-12">
+                                    Previous School Information
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <input type="text" required name="pre_school" id="pre_school" class="form-control" placeholder="Prev School Name">
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <input type="text" required name="pre_class" id="pre_class" class="form-control" placeholder="Previous Class">
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <input type="text" required name="pre_year" id="pre_year" class="form-control" placeholder="Passing Year">
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <input type="text" required name="percentage" id="percentage" class="form-control" placeholder="Percentage">
+                                </div>
+                                <div class="section-title rounded col-lg-12 col-md-12 col-sm-12">
+                                    Permanent Address
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <input type="text" required name="add_1" id="add_1" class="form-control" placeholder="Address Line 1">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <input type="text" required name="add_2" id="add_2" class="form-control" placeholder="Address Line 2">
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <input type="text" required name="city" id="city" class="form-control" placeholder="City">
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <input type="text" required name="state" id="state" class="form-control" placeholder="State">
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <input type="text" required name="pincode" id="pincode" class="form-control" placeholder="PinCode">
+                                </div>
+                                <div class="section-title rounded col-lg-12 col-md-12 col-sm-12">
+
+                                    Parent's Information
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8">
+                                    <input type="text" required name="f_name" id="f_name" class="form-control" placeholder="Father's Name">
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <input type="text" required name="f_occu" id="f_occu" class="form-control" placeholder="Father's Occupation">
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8">
+                                    <input type="text" required name="m_name" id="m_name" class="form-control" placeholder="Mother's Name">
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <input type="text" required name="m_occu" id="m_occu" class="form-control" placeholder="Mother's Occupation">
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <input type="text" required name="f_aadhar" id="f_aadhar" class="form-control" placeholder="Father's Aadhar No.">
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <input type="text" required name="f_qual" id="f_qual" class="form-control" placeholder="Father's Qualification">
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <input type="text" required name="m_qual" id="m_qual" class="form-control" placeholder="Mother's Qualification">
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <input type="text" required name="income" id="income" class="form-control" placeholder="Family Annual Income">
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <input type="text" required name="phone" id="phone" class="form-control" placeholder="Parent's Mobile No.">
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <input type="email" required name="email" id="email" class="form-control" placeholder="Email">
+                                </div>
+                                <div class="section-title rounded col-lg-12 col-md-12 col-sm-12">
+                            
+                                    Upload Documents  (Pay Admission Fee of 150 rupess using this UPID :    vipul57612@ybl )
+                                </div>
+                                <div class="section-title rounded col-lg-6 col-md-6 col-sm-6">
+                            
+                                    Transfer Certificate/ Application
+                                    <div class="col-lg-8 col-md-8 col-sm-8">
+                                    <input type="file" required name="t_cer" id="t_cer" class="form-control" />
+                                </div>
+                                </div>
+                                <div class="section-title rounded col-lg-6 col-md-6 col-sm-6">
+                            
+                                    Online Payment Recipt/Screenshot
+                                    <div class="col-lg-8 col-md-8 col-sm-8">
+                                    <input type="file" required name="p_receipt" id="p_receipt" class="form-control" />
+                                </div>
+                                
+                                </div>
+                                <p style="color: white;"> Make sure Email, Category and Gender should be correct.<br></p>
+                                <p style="color: red; font-weight: 350; font-size: 18px;">In case of submitting Transfer Certificate later, upload an applications in place of Transfer Certificate.</p>
+                                <!-- Submit-->
+
+                                <div class="text-center pd">
+                                    <button type="submit" value="SEND" id="submit" class="btn btn-light btn-radius btn-brd grd1 btn-block">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div><!-- end col -->
+				
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end section -->
+    {% endblock  %}

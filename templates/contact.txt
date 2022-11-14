@@ -1,0 +1,10 @@
+<h3>You have been contacted by {{irst_name}} {{last_name}}. The additional message is as follows:</h3>
+
+
+<pre>
+"{{comments}}"
+
+
+You can contact <strong>{{first_name}}</strong> via email, {{email}} or via phone {{phone}}.
+<pre>
+    
